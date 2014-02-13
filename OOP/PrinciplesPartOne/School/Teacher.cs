@@ -6,19 +6,23 @@
     class Teacher : Person
     {
         // Fields
-        public Comment Comments;
-
+        private Comment comments;
         private List<Discipline> disciplinesToTeach;
 
         // Constructor
         public Teacher(string name, params Discipline[] disciplines)
             : base(name)
         {
-            this.Comments = new Comment();
+            this.comments = new Comment();
             this.disciplinesToTeach = new List<Discipline>(disciplines);
         }
 
         // Properties
+        public Comment Comments
+        {
+            get { return this.comments; }
+        }
+
         public List<Discipline> DisciplinesToTeach
         {
             get { return new List<Discipline>(this.disciplinesToTeach); }

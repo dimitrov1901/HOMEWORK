@@ -6,8 +6,7 @@
     class SchoolClass
     {
         // Fields
-        public Comment Comments;
-
+        private Comment comments;
         private string uniqueIdentifier;
         private List<Student> studentsInClass;
         private List<Teacher> teachersOfClass;
@@ -15,13 +14,18 @@
         // Constructor
         public SchoolClass(string identifier)
         {
-            this.Comments = new Comment();
+            this.comments = new Comment();
             this.uniqueIdentifier = identifier;
             this.studentsInClass = new List<Student>();
             this.teachersOfClass = new List<Teacher>();
         }
 
         // Properties
+        public Comment Comments
+        {
+            get { return this.comments; }
+        }
+
         public string GetIdentifier
         {
             get { return this.uniqueIdentifier; }

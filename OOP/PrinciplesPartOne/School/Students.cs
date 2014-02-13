@@ -5,19 +5,23 @@
     public class Student : Person
     {
         // Fields
-        public Comment Comments;
-
+        private Comment comments;
         private int uniqueClassNumber;
 
         // Constructor
         public Student(string name, int uniqueClassNum)
             : base(name)
         {
-            this.Comments = new Comment();
+            this.comments = new Comment();
             this.UniqueClassNumber = uniqueClassNum;
         }
 
         // Properties
+        public Comment Comments
+        {
+            get { return this.comments; }
+        }
+
         public int UniqueClassNumber
         {
             get { return this.uniqueClassNumber; }
